@@ -2,11 +2,12 @@ package com.example.demo.models;
 
 public class Person {
 
-    private final Long id = 0L;
+    private final Long id;
     private String name;
 
 
     public Person(String name, Long id) {
+        this.id = id;
         this.name = name;
     }
 

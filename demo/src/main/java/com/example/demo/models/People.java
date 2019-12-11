@@ -5,14 +5,9 @@ import java.util.function.Consumer;
 
 public abstract class People <PersonType extends Person> implements Iterable<PersonType>{
 
-    List<PersonType> personList = new ArrayList<>();
+    private List<PersonType> personList;
 
     public People(List<PersonType> people) { this.personList = people;
-    }
-
-
-    public void People (List<PersonType> personList){
-        this.personList = personList;
     }
 
     public void add (PersonType person){
@@ -23,8 +18,8 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
         personList.remove(person);
     }
 
-    public void size (List<PersonType> personList){
-        personList.size();
+    public Integer size (List<PersonType> personList){
+        return personList.size();
     }
 
     public void clear (List<PersonType> personList){
@@ -36,8 +31,11 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
     }
 
     public PersonType findById (Long id){
-        Integer index = personList.indexOf(id);
-        return personList.get(index);
+       for (PersonType p : personList){
+           if(p.getId().equals(id)){
+               return p;
+           }
+       }return null;
     }
 
     public List<PersonType> findAll (){
@@ -46,7 +44,7 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
 
     @Override
     public Iterator<PersonType> iterator() {
-        return null;
+        return personList.iterator();
     }
 
     @Override
@@ -56,6 +54,6 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
 
     @Override
     public Spliterator<PersonType> spliterator() {
-        return null;
+        return personList.spliterator();
     }
 }

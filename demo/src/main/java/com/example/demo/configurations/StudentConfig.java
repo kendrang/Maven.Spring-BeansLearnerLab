@@ -7,20 +7,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 public class StudentConfig {
 
-    @Bean(name = "students")
+    @Bean(name = "currentStudents")
     public Students currentStudents(){
-        Students cohort = new Students (new ArrayList<>());
+        List<Student> cohort = new ArrayList<>();
         cohort.add(new Student("Kai", 1L));
         cohort.add(new Student("Val", 2L));
         cohort.add(new Student("Ryan", 3L));
-        return cohort;
+        return new Students(cohort);
     }
 
-    @Bean
+    @Bean(name = "previousStudents")
     public Students previousStudents(){
         Students cohort = new Students (new ArrayList<>());
         cohort.add(new Student("Alicia", 4L));

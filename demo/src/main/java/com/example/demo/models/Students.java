@@ -12,19 +12,4 @@ public class Students extends People<Student> {
     public Students(List<Student> people) {
         super(people);
     }
-
-    @Override
-    public Iterator<Student> iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer<? super Student> action) {
-
-    }
-
-    @Override
-    public Spliterator<Student> spliterator() {
-        return null;
-    }
 }
