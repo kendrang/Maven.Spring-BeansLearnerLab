@@ -5,7 +5,7 @@ import com.example.demo.models.Person;
 
 public class Student extends Person implements Learner {
 
-    Double totalStudyTime;
+    double totalStudyTime;
 
     public Student(String name, Long id) {
         super(name, id);

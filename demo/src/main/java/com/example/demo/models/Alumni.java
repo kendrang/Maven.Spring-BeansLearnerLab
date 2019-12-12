@@ -26,7 +26,7 @@ public class Alumni {
         //    double numberOfHoursToTeach = numberOfHoursToTeachEachStudent * numberOfStudents;
         //    double numberOfHoursPerInstructor = numberOfHoursToTeach / numberOfInstructors;
         for(Instructor instructor: instructors){
-            //instructor.lecture(previousStudents, (1200.0 * previousStudents.size()) / instructors.size());
+            instructor.lecture(previousStudents, (1200.0 * previousStudents.size()) / instructors.size());
         }
 
     }
