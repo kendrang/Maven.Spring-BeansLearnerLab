@@ -12,12 +12,14 @@ import org.springframework.context.annotation.DependsOn;
 @Configuration
 public class ClassroomConfig {
 
+    @Bean(name = "currentClassroom")
     @DependsOn({"instructors", "students"})
-    public Classroom currentCohort(Instructors instructors, Students students){
+    public Classroom currentCohort(Instructors instructors,  Students students){
         return new Classroom(instructors, students);
     }
 
     @DependsOn({"instructors", "previousStudents"})
+    @Bean(name = "previousClassroom")
     public Classroom previousCohort(Instructors instructors, @Qualifier("previousStudents") Students previousStudents){
         return new Classroom(instructors, previousStudents);
     }

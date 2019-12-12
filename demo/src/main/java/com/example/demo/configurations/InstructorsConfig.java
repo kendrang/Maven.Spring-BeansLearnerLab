@@ -4,10 +4,12 @@ import com.example.demo.models.Instructor;
 import com.example.demo.models.Instructors;
 import com.example.demo.models.Students;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 import java.util.ArrayList;
 
+@Configuration
 public class InstructorsConfig {
 
     @Bean(name = "tcUSAInstructors")

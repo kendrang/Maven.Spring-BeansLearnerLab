@@ -14,22 +14,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class StudentConfigTests {
 
-@Autowired
-@Qualifier("currentStudents")
-Students students;
+    @Autowired
+    @Qualifier("students")
+     private Students students;
 
-@Autowired
-@Qualifier("previousStudents")
-Students prevStudents;
+    @Autowired
+    @Qualifier("previousStudents")
+    private Students prevStudents;
 
 
-@Test
-public void testCurrent(){
-    String expected = "Kai";
-    String actual = students.findById(1L).getName();
+    @Test
+    public void testCurrent(){
+        String expected = "Kai";
+        String actual = students.findById(1L).getName();
 
-    Assert.assertEquals(expected, actual);
-}
+        Assert.assertEquals(expected, actual);
+    }
 
     @Test
     public void testPrev() {

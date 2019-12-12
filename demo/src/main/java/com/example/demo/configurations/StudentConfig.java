@@ -12,7 +12,7 @@ import java.util.List;
 @Configuration
 public class StudentConfig {
 
-    @Bean(name = "currentStudents")
+    @Bean(name = "students")
     public Students currentStudents(){
         List<Student> cohort = new ArrayList<>();
         cohort.add(new Student("Kai", 1L));
@@ -23,14 +23,11 @@ public class StudentConfig {
 
     @Bean(name = "previousStudents")
     public Students previousStudents(){
-        Students cohort = new Students (new ArrayList<>());
+        List<Student> cohort = new ArrayList<>();
         cohort.add(new Student("Alicia", 4L));
         cohort.add(new Student("Jennifer", 5L));
         cohort.add(new Student("Linda", 6L));
-        return cohort;
+        return new Students(cohort);
     }
-
-
-
 
 }
